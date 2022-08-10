@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+    php:
+        build: ./php/
+        container_name: "server_php"
+        restart: unless-stopped
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - "./html:/var/www/html:rw"
+        networks:
+            - database
+        depends_on:
+            - sql      
+
+    sql:        
+        image: mariadb:10.3
+        container_name: "server_sql"
+        restart: unless-stopped
+        ports: 
+            - "3306:3306" 
+        volumes:
+            - "sqldata:/var/lib/mysql"
+        networks:
+            - database
+        environment:
+            MYSQL_ROOT_PASSWORD: "root"
+            MYSQL_DATABASE: "myfirstdb"
+
+volumes:
+    sqldata:
+networks:
+    database:
+        driver: bridge
