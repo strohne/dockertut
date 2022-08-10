@@ -2,28 +2,29 @@
 
 ## Vorbereitung:
 
-WSL: Unter Windows wird das Windows Subsystem for Linux (WSL) benötigt: https://docs.microsoft.com/en-us/windows/wsl/install. 
+**WSL:** Unter Windows wird das Windows Subsystem for Linux (WSL) benötigt: https://docs.microsoft.com/en-us/windows/wsl/install. 
 
-Docker: Wir benötigen ansonsten DockerDesktop: https://www.docker.com/products/docker-desktop/. Achte unter Windows darauf, bei Nachfragen während der Installation die Linux-Container zu aktivieren, die Komponenten für WSL mitzuinstallieren und Docker zum PATH hinzuzufügen. Starte Docker nach der Installation, dann findest Du in der Taskleiste ein Walfisch-Icon, über das Du in die Einstellungen kommst und Container verwalten kannst.
+**Docker:** Installiere DockerDesktop: https://www.docker.com/products/docker-desktop/. Achte unter Windows darauf, bei Nachfragen während der Installation die Linux-Container zu aktivieren, die Komponenten für WSL mitzuinstallieren und Docker zum PATH hinzuzufügen. Starte Docker nach der Installation, dann findest Du in der Taskleiste ein Walfisch-Icon, über das Du in die Einstellungen kommst und Container verwalten kannst.
 
-Git-Repositorium: Klone dieses Repositorium in einen Ordner Deiner Wahl.
+**Git-Repositorium**: Klone dieses Repositorium in einen Ordner Deiner Wahl.
 
 ## Orientierung:
 
-Images enthalten alles, um einen virtuellen Computer zu bauen. Offizielle Images finden sich unter https://hub.docker.com/. Eigene Images werden in Dockerfiles gebaut, indem man von einem bestehenden Image ein neues Image ableitet. Öffne die Datei docker/Dockerfile mit einem Texteditor. Dort ist eine Bauanleitung enthalten, wir leiten von https://hub.docker.com/_/httpd ab. Das Imagewird schließlich mit `docker build` gebaut.
+**Images** enthalten alles, um einen virtuellen Computer zu bauen. Offizielle Images finden sich unter https://hub.docker.com/. Eigene Images werden in Dockerfiles gebaut, indem man von einem bestehenden Image ein neues Image ableitet. 
 
-Um das Image zu verwenden, werden Container mit `docker start` gestartet. Jeder Container stellt normalerweise einen bestimmten Dienst zur Verfügung. Wir starten unten einen Webserver, der lokal unter http://localhost:8080 erreichbar ist.
+Um das Image zu verwenden, werden **Container** gestartet. Jeder Container stellt normalerweise einen bestimmten Dienst zur Verfügung, zum Beispiel einen Webserver.
 
-Mehrere Container können mit `docker compose` orchestriert werden, beispielsweise um einen Webserver und einen Datenbankserver zu betreiben.
+Mit **docker compose** können mehrere Container orchestriert und Verzeichnisse zwischen Wirts- und Gastsystem synchronisiert werden. Für die Webentwicklung wird beispielsweise in einem Container ein Webserver und in einem anderen Container ein Datenbankserver betrieben.
+
 
 ## 1. Dockerfiles
 
-1. Terminal öffnen (Kommandozeile oder Ubuntu Bash) und im Repositorium in den docker-Ordner gehen:
+1. Terminal öffnen und im Repositorium in den docker-Ordner gehen:
   ```
   cd docker
   ```
 
-2. Container builden und starten
+2. Image builden, Container createn und starten
 
   ```
   docker build -t tut-simple-image .
@@ -42,7 +43,7 @@ Mehrere Container können mit `docker compose` orchestriert werden, beispielswei
 
 ## 2. Docker Compose
 
-1. Terminal öffnen (z. B. die Ubuntu Bash) und in das Repositorium gehen:
+1. Terminal öffnen und in das Repositorium gehen:
   ```
   cd compose
   ```
@@ -55,15 +56,12 @@ Mehrere Container können mit `docker compose` orchestriert werden, beispielswei
 3. Im Browser http://localhost aufrufen.  
 
 4. In den Container gehen und die SQL-Datenbank füllen:
-  
   ```
   docker exec -it server_php /bin/bash
   ```
-  
   ```
   mysql --host=sql --user=root --password=root myfirstdb < pages.sql
-  ```  
-
+  ``` 
   ```
   exit
   ```
@@ -77,7 +75,6 @@ Mehrere Container können mit `docker compose` orchestriert werden, beispielswei
 
 - docker image ls
 - docker container ls
-- docker exec -it tut-simple-container /bin/bash   
    
 ## Troubleshooting
 
