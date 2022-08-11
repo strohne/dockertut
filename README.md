@@ -22,8 +22,25 @@ Um das Image zu verwenden, werden **Container** gestartet. Jeder Container stell
 
 Mit **docker compose** können mehrere Container orchestriert und Verzeichnisse zwischen Wirts- und Gastsystem synchronisiert werden. Für die Webentwicklung wird beispielsweise in einem Container ein Webserver und in einem anderen Container ein Datenbankserver betrieben.
 
+## 1. Anwendungen von der Kommandozeile starten
 
-## 1. Dockerfiles
+1. Terminal öffnen und im Repositorium in den neo4j-Ordner gehen:
+  ```
+  cd neo4j
+  ```
+2. Container starten
+
+Mac & Linux:
+```
+docker run -dit --name tut-neo4j -p 80:80 -v "$PWD":/data neo4j
+```
+
+Windows:
+```
+docker run -dit --name tut-neo4j -p 80:80 -v "%CD%":/data neo4j
+```
+
+## 2. Dockerfiles
 
 1. Terminal öffnen und im Repositorium in den docker-Ordner gehen:
   ```
@@ -47,7 +64,7 @@ Mit **docker compose** können mehrere Container orchestriert und Verzeichnisse 
 
   
 
-## 2. Docker Compose
+## 3. Docker Compose
 
 1. Terminal öffnen und in das Repositorium gehen:
   ```
