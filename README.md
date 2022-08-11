@@ -4,7 +4,7 @@
 
 **WSL:** Unter Windows wird das Windows Subsystem for Linux (WSL) benötigt: https://docs.microsoft.com/en-us/windows/wsl/install. 
 
-**Docker:** Installiere DockerDesktop: https://www.docker.com/products/docker-desktop/. Achte unter Windows darauf, bei Nachfragen während der Installation die Linux-Container zu aktivieren, die Komponenten für WSL mitzuinstallieren und Docker zum PATH hinzuzufügen. Starte Docker nach der Installation, dann findest Du in der Taskleiste ein Walfisch-Icon, über das Du in die Einstellungen kommst und Container verwalten kannst.
+**Docker:** Installiere DockerDesktop: https://docs.docker.com/get-docker/. Achte unter Windows darauf, bei Nachfragen während der Installation die Linux-Container zu aktivieren, die Komponenten für WSL mitzuinstallieren und Docker zum PATH hinzuzufügen. Starte Docker nach der Installation, dann findest Du in der Taskleiste ein Walfisch-Icon, über das Du in die Einstellungen kommst und Container verwalten kannst.
 
 **Git-Repositorium**: Klone dieses Repositorium in einen Ordner Deiner Wahl.
 
