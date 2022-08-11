@@ -49,26 +49,36 @@ docker run --publish=7474:7474 --publish=7687:7687 --volume="%CD%":/data neo4j
 ## 2. Dockerfiles
 
 1. Terminal öffnen und im Repositorium in den docker-Ordner gehen:
-  ```
-  cd docker
-  ```
-
-2. Image builden, Container createn und starten
-
-  ```
-  docker build -t tut-simple-image .
-  docker run -dit --name tut-simple-container -p 8080:80 tut-simple-image
-  ```
-
-3. Im Browser http://localhost:8080 aufrufen.  
-
-4. Container stoppen und entfernen
-  ```
-  docker stop tut-simple-container
-  docker rm tut-simple-container
-  ```
-
   
+```
+cd docker
+```
+
+2. Image builden
+
+```
+docker build -t tut-simple-image .
+```
+
+3. Container createn und starten
+
+```
+docker run -dit --name tut-simple-container -p 8080:80 tut-simple-image
+```
+
+4. Im Browser http://localhost:8080 aufrufen.  
+
+5. Container stoppen
+
+```
+docker stop tut-simple-container
+```
+
+6. Container entfernen
+
+```
+docker rm tut-simple-container
+```
 
 ## 3. Docker Compose
 
