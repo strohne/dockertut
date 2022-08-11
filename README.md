@@ -24,6 +24,8 @@ Mit **docker compose** können mehrere Container orchestriert und Verzeichnisse 
 
 ## 1. Anwendungen von der Kommandozeile starten
 
+Siehe https://hub.docker.com/_/neo4j
+
 1. Terminal öffnen und im Repositorium in den neo4j-Ordner gehen:
   ```
   cd neo4j
@@ -32,13 +34,17 @@ Mit **docker compose** können mehrere Container orchestriert und Verzeichnisse 
 
 Mac & Linux:
 ```
-docker run -dit --name tut-neo4j -p 80:80 -v "$PWD":/data neo4j
+docker run --publish=7474:7474 --publish=7687:7687 --volume="$PWD":/data neo4j
 ```
 
 Windows:
 ```
-docker run -dit --name tut-neo4j -p 80:80 -v "%CD%":/data neo4j
+docker run --publish=7474:7474 --publish=7687:7687 --volume="%CD%":/data neo4j
 ```
+
+3. Im Browser http://localhost:7474 aufrufen, mit neo4j/neo4j einloggen
+
+5. Favorites anklicken, Example movie graph laden, Tutorial durchklicken
 
 ## 2. Dockerfiles
 
