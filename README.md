@@ -111,5 +111,5 @@ Nützliche Befehle:
    
 ## Troubleshooting
 
-- VirtualBox und Docker
+- VirtualBox und Docker unter Windows vertragen sich nicht (HyperVisor-Problem)
 
