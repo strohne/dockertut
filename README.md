@@ -1,5 +1,11 @@
 # Getting Started with Docker
 
+## Anwendungsfälle
+- Webserver
+- Datenbanken
+- Testsysteme (z.B. Behat)
+- Parallelisierung auf High Performance Computing-Clustern
+
 ## Vorbereitung:
 
 **WSL:** Unter Windows wird das Windows Subsystem for Linux (WSL) benötigt: https://docs.microsoft.com/en-us/windows/wsl/install. 
@@ -8,7 +14,7 @@
 
 **Git-Repositorium**: Klone dieses Repositorium in einen Ordner Deiner Wahl.
 
-## Orientierung:
+## Orientierung
 
 **Images** enthalten alles, um einen virtuellen Computer zu bauen. Offizielle Images finden sich unter https://hub.docker.com/. Eigene Images werden in Dockerfiles gebaut, indem man von einem bestehenden Image ein neues Image ableitet. 
 
