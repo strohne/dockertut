@@ -110,7 +110,7 @@ docker rm tut-simple-container
    docker compose stop
    ```
 
-Beispiel für einn komplexen Anwendungsfall: [NFDI4Culture Portal Entwicklungsumgebung](https://gitlab.rlp.net/adwmainz/nfdi4culture/portal/culture_docker/-/blob/feature/grav/docker-compose.yml) (Zugang nur mit Loging, wird im Workshop per Screenshare vorgstellt).
+Beispiel für einn komplexen Anwendungsfall: [NFDI4Culture Portal Entwicklungsumgebung](https://gitlab.rlp.net/adwmainz/nfdi4culture/portal/culture_docker/-/blob/feature/grav/docker-compose.yml) (Zugang nur mit Login, wird im Workshop per Screenshare vorgstellt).
    
 ## Docker Reference
 
